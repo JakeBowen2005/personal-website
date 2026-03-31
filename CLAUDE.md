@@ -180,3 +180,16 @@
 - Easy to contact (email + LinkedIn prominent)
 - Mobile beautiful and fast
 - Memorable enough to stand out from 100 other CS student portfolios
+
+## Content + Media Update Notes (Mar 31, 2026)
+
+- Site copy has been upgraded to a more professional, recruiter-facing tone while preserving Jake's authentic voice.
+- New reusable component: `components/ImagePlaceholder.tsx`.
+- Current placeholder slots now exist across pages for:
+  - Primary headshot
+  - Athlete/builder personal image
+  - ClearBid dashboard/workflow screenshots
+  - Per-project screenshot areas on the Projects page
+  - About-page personal/athletics/professional story photos
+- Placeholder blocks are intentionally descriptive so screenshots/photos can be swapped in later without layout refactors.
+- Education section on-site should not display GPA.

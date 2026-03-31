@@ -9,9 +9,9 @@ export default function Footer() {
       <div className="container-max py-16">
         {/* CTA Section */}
         <div className="mb-20 p-8 md:p-12 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center animate-fade-in-up">
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">Ready to work together?</h3>
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">Interested in working together?</h3>
           <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-            I'm actively looking for summer 2026 internships. Let's build something great.
+            I am actively pursuing summer 2026 internship opportunities in software engineering and data-focused product teams.
           </p>
           <a
             href="mailto:jakeeb05@gmail.com"
@@ -28,7 +28,7 @@ export default function Footer() {
           <div className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             <h3 className="text-lg font-bold mb-4 text-gray-900">Jake Bowen</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Full-stack engineer. Built a SaaS in 2 weeks. Athlete mindset. Always learning.
+              Product-minded software engineer focused on shipping practical systems with strong user outcomes.
             </p>
           </div>
 

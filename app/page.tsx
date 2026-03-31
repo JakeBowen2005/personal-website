@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, Code2, Zap, Trophy, Github, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -15,83 +16,90 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="pt-40 pb-32 relative overflow-hidden">
+      <section className="pt-36 pb-28 relative overflow-hidden">
         <div className="container-max">
-          <div className="max-w-4xl">
-            {/* Top accent */}
-            <div className="accent-line mb-8 animate-fade-in-up" style={{ animationDelay: '0s' }}></div>
+          <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 items-start">
+            <div className="max-w-4xl">
+              <div className="accent-line mb-8 animate-fade-in-up" style={{ animationDelay: '0s' }}></div>
 
-            {/* Main headline */}
-            <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-              Builder. Engineer.
-              <br />
-              <span className="gradient-text">Always Learning.</span>
-            </h1>
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                Product-Minded
+                <br />
+                <span className="gradient-text">Software Engineer.</span>
+              </h1>
 
-            {/* Subheading */}
-            <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mb-12 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              I'm early in my career, but I don't stop building. ClearBid went from zero to live in 2 weeks. I want to join a team where I can learn from engineers better than me.
-            </p>
+              <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mb-12 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                I build quickly, iterate with real users, and care about shipping software that solves practical problems. In March 2026, I launched ClearBid from idea to production in under two weeks.
+              </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-              <Link href="/projects" className="btn-primary">
-                See my work
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a href="mailto:jakeeb05@gmail.com" className="btn-secondary no-underline">
-                <Mail className="w-4 h-4" />
-                Let's chat
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                <Link href="/projects" className="btn-primary">
+                  View projects
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a href="mailto:jakeeb05@gmail.com" className="btn-secondary no-underline">
+                  <Mail className="w-4 h-4" />
+                  Contact me
+                </a>
+              </div>
+
+              <div className="grid grid-cols-3 md:grid-cols-3 gap-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                {[
+                  { number: '2', label: 'Weeks to launch V1' },
+                  { number: '3', label: 'AI workflows in production' },
+                  { number: '1', label: 'Live SaaS serving real demos' },
+                ].map((stat, idx) => (
+                  <div key={idx} className="border-l-2 border-blue-600 pl-4">
+                    <p className="text-3xl md:text-4xl font-bold text-gray-900">{stat.number}</p>
+                    <p className="text-gray-600 text-sm mt-2">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Stats row */}
-            <div className="grid grid-cols-3 md:grid-cols-3 gap-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-              {[
-                { number: '2', label: 'Weeks to launch' },
-                { number: '3', label: 'AI integrations' },
-                { number: '∞', label: 'Hunger to learn' },
-              ].map((stat, idx) => (
-                <div key={idx} className="border-l-2 border-blue-600 pl-4">
-                  <p className="text-3xl md:text-4xl font-bold text-gray-900">{stat.number}</p>
-                  <p className="text-gray-600 text-sm mt-2">{stat.label}</p>
-                </div>
-              ))}
+            <div className="space-y-5 animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
+              <ImagePlaceholder
+                title="Primary Headshot"
+                note="Replace with a high-quality portrait (recommended 4:5 ratio, clean background, natural lighting)."
+                ratio="portrait"
+              />
+              <ImagePlaceholder
+                title="Athlete/Builder Photo"
+                note="Use a candid image that connects your athletic discipline with your builder identity."
+                ratio="landscape"
+              />
             </div>
           </div>
         </div>
 
-        {/* Parallax background element */}
         <div
-          className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-3xl opacity-30 -z-10"
+          className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full blur-3xl opacity-30 -z-10"
           style={{ transform: `translateY(${scrollY * 0.5}px)` }}
         ></div>
       </section>
 
-      {/* Featured Project */}
       <section className="py-20 bg-white border-y border-gray-200">
         <div className="container-max">
           <div className="text-center mb-16 animate-fade-in-up">
-            <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">Featured</p>
+            <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">Featured Project</p>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">ClearBid</h2>
-            <p className="text-gray-600 mt-4 text-lg">SaaS platform automating vendor bid management for HOA communities</p>
+            <p className="text-gray-600 mt-4 text-lg">Bid management SaaS for HOA boards and property management teams</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center animate-scale-in">
+          <div className="grid md:grid-cols-2 gap-12 items-start animate-scale-in">
             <div className="card-interactive">
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                   <Zap className="w-5 h-5 text-blue-600" />
-                  <span className="text-sm font-semibold text-blue-600">Shipped in 2 weeks</span>
+                  <span className="text-sm font-semibold text-blue-600">Launched in March 2026</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">Founded & Shipped</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Zero to production in under 14 days</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Founded and built a full-stack SaaS from concept to live product with real customers in less than 14 days. Django backend, React frontend, PostgreSQL database, three Claude AI integrations, and Google Places API.
+                  I designed and shipped the core product architecture, onboarding flow, vendor bid submission system, and AI-assisted contract tools. The product is live, and active outreach is underway with Southern California management firms.
                 </p>
                 <div className="pt-4 space-y-2">
-                  <p className="text-sm text-gray-700"><strong>Tech:</strong> Django, PostgreSQL, React, Claude API, Google Places API</p>
-                  <p className="text-sm text-gray-700"><strong>Status:</strong> Live at clearbid.us with active customer demos</p>
+                  <p className="text-sm text-gray-700"><strong>Stack:</strong> Django, PostgreSQL, Tailwind, AWS S3, Resend, Claude API, Google Places API</p>
+                  <p className="text-sm text-gray-700"><strong>Business focus:</strong> Reducing bid cycle friction for HOA decision makers</p>
                 </div>
                 <div className="pt-4 flex gap-3">
                   <a href="https://clearbid.us" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-4">
@@ -99,58 +107,48 @@ export default function Home() {
                   </a>
                   <a href="https://github.com/JakeBowen2005/ClearBid" target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm py-2 px-4">
                     <Github className="w-4 h-4" />
+                    Source
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="card-interactive space-y-4">
-              <h4 className="font-bold text-gray-900">Key Features</h4>
-              <ul className="space-y-3 text-gray-700">
-                {[
-                  'Automated bid scoring (0-100 points)',
-                  'AI vendor review summarization',
-                  'Real-time contract generation (SSE)',
-                  'AI-powered PDF parsing',
-                  'Dual-portal system',
-                  'Automated renewal alerts',
-                  'Google Places integration',
-                  'Tokenized email invitations',
-                ].map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <span className="text-blue-600 font-bold mt-1">▸</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="space-y-5">
+              <ImagePlaceholder
+                title="ClearBid Dashboard Screenshot"
+                note="Place your best dashboard/UI screenshot here (desktop view)."
+                ratio="wide"
+              />
+              <ImagePlaceholder
+                title="ClearBid Workflow Screenshot"
+                note="Use a second screenshot that shows bid scoring, vendor flow, or contract generation."
+                ratio="wide"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why section */}
       <section className="py-32">
         <div className="container-max">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-16 text-center">
-            What I bring to your team
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-16 text-center">What I bring to an engineering team</h2>
 
           <div className="grid md:grid-cols-3 gap-8 stagger-children">
             {[
               {
                 icon: Zap,
-                title: 'Ship Fast',
-                description: 'I move quick without sacrificing quality. ClearBid proved I can go from zero to customers in 2 weeks.',
+                title: 'Execution Speed',
+                description: 'I move quickly from requirements to shipped code while keeping the product reliable and user-focused.',
               },
               {
                 icon: Code2,
-                title: 'Full-Stack Depth',
-                description: 'Backend architecture, frontend interfaces, database design, DevOps, AI integrations. I can own the whole stack.',
+                title: 'Full-Stack Ownership',
+                description: 'I can own backend systems, APIs, data modeling, frontend UX, and deployment workflows end to end.',
               },
               {
                 icon: Trophy,
-                title: 'Athlete\'s Mindset',
-                description: 'Competitive drive from jiu jitsu and running. Show up consistently. Get 1% better every day. That\'s how you win.',
+                title: 'Competitive Consistency',
+                description: 'Sports taught me disciplined iteration: show up daily, learn fast, and improve under pressure.',
               },
             ].map((item, idx) => (
               <div key={idx} className="card-interactive animate-fade-in-up">
@@ -163,15 +161,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* More projects teaser */}
       <section className="py-20 bg-gray-50 border-y border-gray-200">
         <div className="container-max text-center animate-fade-in-up">
-          <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-4">More Projects</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Stock Dashboard. Garmin Data Analysis. And more.
-          </h2>
+          <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-4">More Work</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Stock analytics, performance data, and practical product builds</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Each project taught me something new. Each one shipped to real users.
+            My projects reflect a consistent pattern: identify a real problem, build quickly, and learn through deployment.
           </p>
           <Link href="/projects" className="btn-primary">
             Explore all projects
@@ -180,21 +175,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
       <section className="py-32">
         <div className="container-max text-center max-w-3xl mx-auto animate-fade-in-up">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
-            Let's build something
+            Let&apos;s build
             <br />
-            <span className="gradient-text">great together</span>
+            <span className="gradient-text">something meaningful</span>
           </h2>
           <p className="text-xl text-gray-600 mb-12">
-            I'm actively looking for summer 2026 internships in software engineering and data science. If you think I'd be a good fit, let's talk.
+            I&apos;m actively pursuing summer 2026 software engineering and data-focused internships where I can contribute quickly and keep leveling up.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:jakeeb05@gmail.com" className="btn-primary no-underline">
               <Mail className="w-4 h-4" />
-              Email me
+              Email
             </a>
             <a href="https://www.linkedin.com/in/jake-bowen-6b1269338/" target="_blank" rel="noopener noreferrer" className="btn-secondary no-underline">
               <Linkedin className="w-4 h-4" />

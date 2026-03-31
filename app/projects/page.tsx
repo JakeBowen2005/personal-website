@@ -1,6 +1,7 @@
 'use client';
 
 import { Github, ExternalLink, Zap, Database, Brain, Clock } from 'lucide-react';
+import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 const projects = [
   {
@@ -8,82 +9,79 @@ const projects = [
     subtitle: 'HOA Vendor Bid Management SaaS',
     timeline: 'Mar 2026 – Present',
     description:
-      'Founded and sole-developed a production SaaS automating vendor bid management. Zero to live product with real customers in 2 weeks.',
+      'Sole engineer for a production SaaS platform that streamlines vendor bidding, contract workflows, and renewal tracking for HOA organizations.',
     stats: [
-      { label: '2 weeks', value: 'to launch' },
-      { label: '3', value: 'AI features' },
-      { label: '∞', value: 'potential' },
+      { label: '2 weeks', value: 'idea to live V1' },
+      { label: '3', value: 'AI workflows shipped' },
+      { label: 'Live', value: 'active demos in progress' },
     ],
     features: [
-      'Django 6 + PostgreSQL backend',
-      'Real-time contract generation via SSE',
-      'AI vendor summarization',
-      'PDF parsing and field auto-fill',
-      'Google Places API integration',
-      'Automated bid scoring (0-100)',
-      'Dual-portal system',
-      'Email invitations with tokens',
-      'Renewal alerts (90/60/30/14 days)',
+      'Tokenized vendor invitations and no-login bid submission',
+      'Real-time contract generation via server-sent events',
+      'AI-assisted PDF parsing to auto-fill contract fields',
+      'Automated bid scoring model (price, timeline, compliance, experience)',
+      'Google Places integration with staged loading and caching',
+      'Dual portal experience for boards and management firms',
+      'Automated renewal alerts at 90/60/30/14-day intervals',
     ],
-    tech: ['Python', 'Django', 'PostgreSQL', 'React', 'Claude API', 'Google Places API', 'AWS S3', 'Resend', 'Render'],
+    tech: ['Python', 'Django', 'PostgreSQL', 'Tailwind CSS', 'Claude API', 'Google Places API', 'AWS S3', 'Resend', 'Render'],
     links: {
       live: 'https://clearbid.us',
       github: 'https://github.com/JakeBowen2005/ClearBid',
     },
+    screenshotPlaceholder: 'ClearBid product dashboard and workflow screenshots',
     featured: true,
   },
   {
     title: 'Stock Market Dashboard',
-    subtitle: 'Real-time Stock Analytics Platform',
+    subtitle: 'Analytics + Alerting Platform',
     timeline: 'Feb 2026 – Mar 2026',
     description:
-      'Full-stack Django stock dashboard with advanced analytics engine, real-time alerts, and watchlist management.',
+      'Built a full-stack equities dashboard with account-based watchlists, metric computation pipelines, and automated price movement alerting.',
     stats: [
-      { label: 'Pandas', value: 'analytics' },
-      { label: 'Redis', value: 'caching' },
-      { label: 'Celery', value: 'tasks' },
+      { label: 'Pandas', value: 'analytics engine' },
+      { label: 'Redis', value: 'fast data layer' },
+      { label: 'Celery', value: 'background processing' },
     ],
     features: [
-      'User authentication system',
-      'Watchlist management (8 tickers)',
-      'Returns & CAGR calculation',
-      'Volatility & drawdown analysis',
-      'Moving average signals',
-      'Price/percentage alerts',
-      'Background job processing',
-      'Real-time data via yfinance',
+      'Secure authentication and user watchlist management',
+      'Returns, CAGR, drawdown, and volatility calculations',
+      'Moving-average and valuation indicator tracking',
+      'Threshold-based price and percentage alerting',
+      'Scheduled background checks for alert triggers',
+      'Real-time market data integration via yfinance and Finnhub',
     ],
     tech: ['Django', 'PostgreSQL', 'Pandas', 'yfinance', 'Finnhub', 'Redis', 'Celery', 'Render'],
     links: {
       live: 'https://stock-dashboard-uef7.onrender.com',
       github: 'https://github.com/JakeBowen2005/Stock_Dashboard',
     },
+    screenshotPlaceholder: 'Stock dashboard watchlist and analytics views',
   },
   {
     title: 'Garmin Running Analysis',
-    subtitle: 'Personal Data → Performance Insights',
+    subtitle: 'Performance Data Exploration Project',
     timeline: 'Sep 2025 – Jan 2026',
     description:
-      'Analyzed personal Garmin running data to identify trends. Shows ability to turn passion into technical projects.',
+      'Analyzed personal running history to uncover pacing consistency, volume trends, and performance progression using reproducible Python workflows.',
     stats: [
       { label: '50+', value: 'runs analyzed' },
-      { label: 'Python', value: 'analysis' },
-      { label: 'Matplotlib', value: 'visualization' },
+      { label: 'Python', value: 'data workflow' },
+      { label: 'Matplotlib', value: 'visual reporting' },
     ],
     features: [
-      'Data cleaning & normalization',
-      'Weekly trend analysis',
-      'Monthly performance metrics',
-      'Pace consistency analysis',
-      'Mileage distribution',
-      'Progress visualization',
-      'Distance-based segmentation',
-      'Statistical insights',
+      'Data cleaning and normalization pipeline',
+      'Weekly and monthly trend decomposition',
+      'Pace consistency and mileage distribution analysis',
+      'Distance-based segment comparisons',
+      'Performance progression visualizations',
+      'Statistical summaries for training insights',
     ],
     tech: ['Python', 'Pandas', 'Matplotlib', 'Jupyter'],
     links: {
       github: 'https://github.com/JakeBowen2005/Garmin-running-summary',
     },
+    screenshotPlaceholder: 'Charts showing pace trends, volume, and performance improvements',
   },
 ];
 
@@ -91,20 +89,18 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen pt-32 pb-20">
       <div className="container-max">
-        {/* Header */}
         <div className="mb-20 animate-fade-in-up">
           <div className="accent-line mb-8"></div>
           <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-6">
-            Work that speaks
+            Selected
             <br />
-            <span className="gradient-text">for itself</span>
+            <span className="gradient-text">Engineering Work</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl">
-            From shipped SaaS platforms with real customers to data analysis projects — here's what I've built and shipped.
+            Projects built with a product mindset: clear user problems, measurable outcomes, and fast execution from concept to delivery.
           </p>
         </div>
 
-        {/* Projects Grid */}
         <div className="space-y-12">
           {projects.map((project, idx) => (
             <div
@@ -115,12 +111,9 @@ export default function ProjectsPage() {
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               <div className="space-y-8">
-                {/* Header */}
                 <div>
                   {project.featured && (
-                    <p className="text-blue-600 text-sm font-bold uppercase tracking-widest mb-3">
-                      ⭐ Featured Project
-                    </p>
+                    <p className="text-blue-600 text-sm font-bold uppercase tracking-widest mb-3">Featured Project</p>
                   )}
                   <div className="space-y-2 mb-4">
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900">{project.title}</h2>
@@ -130,23 +123,18 @@ export default function ProjectsPage() {
                   <p className="text-sm text-gray-500 mt-4 font-medium">{project.timeline}</p>
                 </div>
 
-                {/* Stats */}
-                {project.stats && (
-                  <div className="grid grid-cols-3 gap-6 py-6 border-y border-gray-200">
-                    {project.stats.map((stat, i) => (
-                      <div key={i}>
-                        <p className="text-blue-600 font-bold text-2xl">{stat.label}</p>
-                        <p className="text-gray-600 text-sm">{stat.value}</p>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                <div className="grid grid-cols-3 gap-6 py-6 border-y border-gray-200">
+                  {project.stats.map((stat, i) => (
+                    <div key={i}>
+                      <p className="text-blue-600 font-bold text-2xl">{stat.label}</p>
+                      <p className="text-gray-600 text-sm">{stat.value}</p>
+                    </div>
+                  ))}
+                </div>
 
-                {/* Content Grid */}
                 <div className="grid md:grid-cols-2 gap-12">
-                  {/* Features */}
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-4 uppercase text-sm tracking-widest">Features</h4>
+                    <h4 className="font-bold text-gray-900 mb-4 uppercase text-sm tracking-widest">Impact Highlights</h4>
                     <ul className="space-y-2">
                       {project.features.map((feature, i) => (
                         <li key={i} className="text-gray-700 flex items-start gap-3">
@@ -157,23 +145,29 @@ export default function ProjectsPage() {
                     </ul>
                   </div>
 
-                  {/* Tech Stack */}
-                  <div>
-                    <h4 className="font-bold text-gray-900 mb-4 uppercase text-sm tracking-widest">Tech Stack</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, i) => (
-                        <span
-                          key={i}
-                          className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-200"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-bold text-gray-900 mb-4 uppercase text-sm tracking-widest">Tech Stack</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((tech, i) => (
+                          <span
+                            key={i}
+                            className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-200"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
+
+                    <ImagePlaceholder
+                      title={`${project.title} Screenshot Slot`}
+                      note={`Drop in images for: ${project.screenshotPlaceholder}.`}
+                      ratio="wide"
+                    />
                   </div>
                 </div>
 
-                {/* Links */}
                 <div className="flex flex-wrap gap-4 pt-6 border-t border-gray-200">
                   {project.links.live && (
                     <a
@@ -203,37 +197,34 @@ export default function ProjectsPage() {
           ))}
         </div>
 
-        {/* Philosophy Section */}
         <div className="mt-32 pt-20 border-t border-gray-200 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
-            How I approach building
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">How I build products</h2>
 
           <div className="grid md:grid-cols-2 gap-8 stagger-children">
             {[
               {
                 icon: Clock,
-                title: 'Bias for shipping',
+                title: 'Bias for delivery',
                 description:
-                  '80% shipped beats 99% stuck in development. Real feedback from real users teaches more than planning.',
+                  'I optimize for learning velocity: ship useful versions early, gather feedback, and improve quickly based on real behavior.',
               },
               {
                 icon: Zap,
-                title: 'Speed with quality',
+                title: 'Speed with engineering discipline',
                 description:
-                  '2 weeks to ClearBid v1 proved I can move fast. But speed without solid engineering is technical debt.',
+                  'Fast iteration works only when paired with clean structure, maintainable code, and thoughtful tradeoff decisions.',
               },
               {
                 icon: Database,
-                title: 'Real products',
+                title: 'Real customer context',
                 description:
-                  'ClearBid isn\'t a classroom project. Real property management companies rely on it. That changes everything.',
+                  'Building for actual users sharpens priorities, forces clarity, and improves product judgment far beyond classroom scope.',
               },
               {
                 icon: Brain,
-                title: 'Constant learning',
+                title: 'High-growth mindset',
                 description:
-                  'Every project taught me something new. Django, React, APIs, DevOps. I\'m hungry to learn faster.',
+                  'I actively seek environments with strong engineers, hard technical problems, and direct feedback loops.',
               },
             ].map((item, idx) => (
               <div key={idx} className="card-interactive animate-fade-in-up">
@@ -245,11 +236,10 @@ export default function ProjectsPage() {
           </div>
         </div>
 
-        {/* Final CTA */}
         <div className="mt-20 p-12 md:p-16 text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-3xl animate-fade-in-up">
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">Want to work together?</h3>
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">Interested in collaborating?</h3>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto text-lg">
-            I'm actively looking for summer 2026 internships. Let's talk about what we can build.
+            I&apos;m looking for summer 2026 internship opportunities where I can contribute to production software and keep compounding as an engineer.
           </p>
           <a href="mailto:jakeeb05@gmail.com" className="inline-flex items-center gap-2 bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all">
             Send me a message

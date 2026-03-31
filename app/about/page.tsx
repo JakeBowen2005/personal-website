@@ -1,139 +1,139 @@
 'use client';
 
 import { Heart, Zap, Target, Users, Github, Linkedin, Mail } from 'lucide-react';
+import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen pt-32 pb-20">
       <div className="container-max">
-        {/* Header */}
         <div className="mb-20 animate-fade-in-up">
           <div className="accent-line mb-8"></div>
           <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-6">
-            Who I am
+            The person
             <br />
-            <span className="gradient-text">and why I code</span>
+            <span className="gradient-text">behind the code</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl">
-            The story behind the engineer — what shaped how I think, learn, and build.
+            Athlete, hospitality professional, and builder. My background shaped how I work: disciplined execution, clear communication, and ownership under pressure.
           </p>
         </div>
 
-        {/* Story Sections */}
         <div className="space-y-20">
-          {/* Growing Up */}
           <div className="grid md:grid-cols-2 gap-12 items-center stagger-children">
             <div className="animate-fade-in-up">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Raised to work hard</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Built on consistency</h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                I grew up in a family that valued hard work above just about everything else. Not the flashy kind — the quiet, consistent kind. Show up. Put in the work. Don't make excuses.
+                I grew up in a family culture centered on discipline and accountability. That mindset became foundational to how I approach engineering work: show up, execute, and improve continuously.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                That became my foundation. It's how I approach problems, how I learn new things, and how I build products. Talent is overrated when someone else is working harder.
+                My goal is simple: contribute to meaningful products, learn from strong teammates, and become the kind of engineer people trust on difficult problems.
               </p>
             </div>
-            <div className="card-interactive animate-fade-in-up text-center">
-              <p className="text-3xl font-bold text-blue-600 mb-2">Bay Area</p>
-              <p className="text-gray-600">Born and raised in the place that makes builders</p>
-            </div>
+            <ImagePlaceholder
+              title="Personal Story Photo"
+              note="Add a personal photo that represents your roots or day-to-day life in Fullerton/Bay Area."
+              ratio="landscape"
+            />
           </div>
 
-          {/* Athlete */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="card-interactive animate-fade-in-up order-2 md:order-1">
-              <div className="space-y-4 text-gray-700">
-                <p className="font-semibold flex items-center gap-2">
-                  <span className="text-2xl">🏀</span> Basketball most of my life
-                </p>
-                <p className="font-semibold flex items-center gap-2">
-                  <span className="text-2xl">🏃</span> Competitive running (serious training)
-                </p>
-                <p className="font-semibold flex items-center gap-2">
-                  <span className="text-2xl">🥋</span> Jiu jitsu now
-                </p>
-                <p className="text-sm text-gray-600 mt-6">
-                  Sports taught me what school never could: how to get good at something.
-                </p>
+            <div className="space-y-5 order-2 md:order-1">
+              <ImagePlaceholder
+                title="Athletics Photo"
+                note="Use a strong action image from running, jiu jitsu, or basketball."
+                ratio="landscape"
+              />
+              <div className="card-interactive animate-fade-in-up">
+                <div className="space-y-4 text-gray-700">
+                  <p className="font-semibold">Basketball: years of team discipline and communication</p>
+                  <p className="font-semibold">Running: consistency, pacing, and long-term improvement</p>
+                  <p className="font-semibold">Jiu jitsu: humility, iteration, and composure</p>
+                  <p className="text-sm text-gray-600 mt-6">
+                    Sports gave me a repeatable system for growth that I now apply to software.
+                  </p>
+                </div>
               </div>
             </div>
             <div className="animate-fade-in-up order-1 md:order-2">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Athlete's mentality</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Athlete&apos;s mindset in engineering</h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Sports taught me that showing up consistently, even when you're not seeing results, is how you actually get good at something. That's not just about athletics.
+                Athletics trained me to operate in feedback loops: practice, review, adjust, repeat. That maps directly to product development.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Basketball taught me communication under pressure. Running taught me discipline. Jiu jitsu taught me humility — you get submitted every class, and that's how you improve.
+                I am comfortable with hard critiques, fast iterations, and sustained effort over long timelines. Those habits help me execute when projects get complex.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                I apply that same mentality to learning code, shipping products, and working in teams. The tools change, but the mindset stays the same.
+                The tools change between sports and software, but the core process stays the same: discipline, resilience, and continuous refinement.
               </p>
             </div>
           </div>
 
-          {/* Work */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Hospitality shaped me</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Hospitality taught product empathy</h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Most people see hospitality as "just a job." I saw it as a masterclass. Working as a Food Runner, Bistro Attendant, and math tutor taught me real skills: communication, managing pressure, taking ownership.
+                Working in hotels and service environments taught me to stay composed under pressure, communicate clearly, and prioritize what the customer needs right now.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                I learned to be direct, clear, and focused on what the user actually needs. I learned to stay composed when everything's on fire. Those skills are just as important in a startup as they are in a busy restaurant.
+                Those are directly transferable engineering skills. Product quality is not only code quality, it is also reliability, clarity, and user trust.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Work isn't beneath you. It's where you learn who you are.
+                I bring that service mindset into software: listen closely, solve the real problem, and deliver with professionalism.
               </p>
             </div>
-            <div className="card-interactive animate-fade-in-up">
-              <div className="space-y-4">
-                <div>
-                  <p className="font-semibold text-gray-900">Lafayette Park Hotel</p>
-                  <p className="text-sm text-gray-600">Food Runner, 2+ years</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">Courtyard Marriott</p>
-                  <p className="text-sm text-gray-600">Bistro Attendant, now</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">Mathnasium</p>
-                  <p className="text-sm text-gray-600">Math Tutor</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">Ultimate Fieldhouse</p>
-                  <p className="text-sm text-gray-600">Basketball Gym</p>
+            <div className="space-y-5">
+              <ImagePlaceholder
+                title="Professional Photo"
+                note="Insert a photo in a work setting (laptop, whiteboard, or speaking with others)."
+                ratio="landscape"
+              />
+              <div className="card-interactive animate-fade-in-up">
+                <div className="space-y-4">
+                  <div>
+                    <p className="font-semibold text-gray-900">Courtyard Marriott</p>
+                    <p className="text-sm text-gray-600">Bistro Attendant | Sep 2025 – Present</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Lafayette Park Hotel</p>
+                    <p className="text-sm text-gray-600">Food Runner | Mar 2023 – Aug 2025</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Mathnasium</p>
+                    <p className="text-sm text-gray-600">Math Tutor | Aug 2024 – Jan 2025</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Why I Code */}
           <div className="py-20 border-y border-gray-200 animate-fade-in-up">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Why I code</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Why I build software</h2>
             <div className="grid md:grid-cols-2 gap-8 stagger-children">
               {[
                 {
                   icon: Zap,
-                  title: "I can't stop building",
+                  title: 'I am energized by execution',
                   description:
-                    "It's not a career move — it's how I think. I see a problem and I want to build the solution. ClearBid proved that.",
+                    'I enjoy turning ambiguity into shipped product features that solve practical business problems.',
                 },
                 {
                   icon: Target,
-                  title: 'I learn by shipping',
+                  title: 'I learn through production feedback',
                   description:
-                    'I\'ll read the docs, but real learning happens when code is live and users are using it. That\'s where growth lives.',
+                    'Building live systems with real users has been the fastest way for me to improve technical and product judgment.',
                 },
                 {
                   icon: Heart,
-                  title: 'I want to build things that matter',
+                  title: 'I care about useful outcomes',
                   description:
-                    'ClearBid isn\'t a portfolio piece. Real HOA communities are using it. That\'s what makes it matter.',
+                    'I prefer projects with tangible impact where quality and reliability matter to the people using the product.',
                 },
                 {
                   icon: Users,
-                  title: 'I want to learn from better engineers',
+                  title: 'I want strong engineering mentorship',
                   description:
-                    'Solo learning has a ceiling. I want to be in a room with people better than me, doing hard things together.',
+                    'I am actively looking for teams where I can contribute immediately while learning from experienced engineers.',
                 },
               ].map((item, idx) => (
                 <div key={idx} className="card-interactive animate-fade-in-up">
@@ -145,7 +145,6 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Skills */}
           <div className="animate-fade-in-up">
             <h2 className="text-4xl font-bold text-gray-900 mb-12">Technical toolkit</h2>
             <div className="grid md:grid-cols-2 gap-8 stagger-children">
@@ -160,11 +159,11 @@ export default function AboutPage() {
                 },
                 {
                   category: 'Infrastructure',
-                  skills: ['Git/GitHub', 'Render', 'AWS S3', 'PostgreSQL', 'Redis', 'Celery', 'Docker', 'Vercel'],
+                  skills: ['Git/GitHub', 'Render', 'AWS S3', 'Redis', 'Celery', 'Docker', 'Vercel'],
                 },
                 {
                   category: 'APIs & Integrations',
-                  skills: ['Google Places', 'Resend', 'yfinance', 'Finnhub', 'Claude API'],
+                  skills: ['Google Places API', 'Resend', 'yfinance', 'Finnhub', 'Claude API'],
                 },
               ].map((skillGroup, idx) => (
                 <div key={idx} className="card-interactive animate-fade-in-up">
@@ -181,35 +180,30 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Education */}
           <div className="card-interactive animate-fade-in-up">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Education</h2>
             <div className="space-y-4">
               <div>
                 <p className="font-bold text-gray-900 text-lg">California State University, Fullerton</p>
-                <p className="text-sm text-gray-600">Expected Graduation: May 2027</p>
+                <p className="text-sm text-gray-600">B.S. Computer Science | Minor in Mathematics</p>
+                <p className="text-sm text-gray-600">Expected graduation: May 2027</p>
               </div>
-              <p className="text-gray-700">
-                <strong>B.S. Computer Science</strong> | <strong>Minor: Mathematics</strong> | <strong>GPA: 3.66</strong>
-              </p>
               <p className="text-gray-600 leading-relaxed">
-                I chose CSUF because it has a strong engineering program and a focus on practical skills. But real learning happens outside the classroom — building products, shipping code, getting feedback from real users.
+                I focus on applying coursework to production projects, building practical systems, and developing engineering judgment through real-world iteration.
               </p>
             </div>
           </div>
 
-          {/* Looking for */}
           <div className="p-12 md:p-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-3xl text-center animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">What I'm looking for</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">What I&apos;m looking for</h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              I'm actively applying for summer 2026 software engineering and data science internships.
+              Summer 2026 internship opportunities where I can contribute to production software and continue learning from high-performing teams.
             </p>
             <ul className="text-white/90 max-w-2xl mx-auto mb-12 space-y-3 text-lg text-left">
-              <li>✓ A team where I can ship real code that matters</li>
-              <li>✓ Engineers better than me who will give hard feedback</li>
-              <li>✓ A chance to learn systems at scale</li>
-              <li>✓ Problems I don't immediately know how to solve</li>
-              <li>✓ A place that values speed, ownership, and getting things done</li>
+              <li>Build features that matter to real users</li>
+              <li>Receive direct technical feedback from strong engineers</li>
+              <li>Work on systems where reliability and performance matter</li>
+              <li>Own problems end-to-end with clear accountability</li>
             </ul>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
