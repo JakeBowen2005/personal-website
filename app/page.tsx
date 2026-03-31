@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, Code2, Zap, Trophy, Github, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
+import Image from 'next/image';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -58,16 +58,25 @@ export default function Home() {
             </div>
 
             <div className="space-y-5 animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
-              <ImagePlaceholder
-                title="Primary Headshot"
-                note="Replace with a high-quality portrait (recommended 4:5 ratio, clean background, natural lighting)."
-                ratio="portrait"
-              />
-              <ImagePlaceholder
-                title="Athlete/Builder Photo"
-                note="Use a candid image that connects your athletic discipline with your builder identity."
-                ratio="landscape"
-              />
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white">
+                <Image
+                  src="/images/main-portrait.jpg"
+                  alt="Jake Bowen with his sister"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  priority
+                />
+              </div>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white">
+                <Image
+                  src="/images/home-athlete.jpg"
+                  alt="Jake Bowen training with his jiu jitsu team"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -113,17 +122,36 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-5">
-              <ImagePlaceholder
-                title="ClearBid Dashboard Screenshot"
-                note="Place your best dashboard/UI screenshot here (desktop view)."
-                ratio="wide"
-              />
-              <ImagePlaceholder
-                title="ClearBid Workflow Screenshot"
-                note="Use a second screenshot that shows bid scoring, vendor flow, or contract generation."
-                ratio="wide"
-              />
+            <div className="grid gap-4">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white">
+                <Image
+                  src="/images/clearbid-dashboard.png"
+                  alt="ClearBid dashboard overview"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white">
+                  <Image
+                    src="/images/clearbid-workflow-1.png"
+                    alt="ClearBid workflow screenshot showing project portfolio view"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                </div>
+                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white">
+                  <Image
+                    src="/images/clearbid-workflow-2.png"
+                    alt="ClearBid workflow screenshot showing vendor suggestions and invitations"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

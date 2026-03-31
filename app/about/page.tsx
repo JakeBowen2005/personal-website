@@ -2,6 +2,7 @@
 
 import { Heart, Zap, Target, Users, Github, Linkedin, Mail } from 'lucide-react';
 import ImagePlaceholder from '@/components/ImagePlaceholder';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
@@ -39,11 +40,15 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-5 order-2 md:order-1">
-              <ImagePlaceholder
-                title="Athletics Photo"
-                note="Use a strong action image from running, jiu jitsu, or basketball."
-                ratio="landscape"
-              />
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white">
+                <Image
+                  src="/images/about-athletics.jpg"
+                  alt="Jake Bowen athletics photo"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
               <div className="card-interactive animate-fade-in-up">
                 <div className="space-y-4 text-gray-700">
                   <p className="font-semibold">Basketball: years of team discipline and communication</p>
@@ -82,26 +87,19 @@ export default function AboutPage() {
                 I bring that service mindset into software: listen closely, solve the real problem, and deliver with professionalism.
               </p>
             </div>
-            <div className="space-y-5">
-              <ImagePlaceholder
-                title="Professional Photo"
-                note="Insert a photo in a work setting (laptop, whiteboard, or speaking with others)."
-                ratio="landscape"
-              />
-              <div className="card-interactive animate-fade-in-up">
-                <div className="space-y-4">
-                  <div>
-                    <p className="font-semibold text-gray-900">Courtyard Marriott</p>
-                    <p className="text-sm text-gray-600">Bistro Attendant | Sep 2025 – Present</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">Lafayette Park Hotel</p>
-                    <p className="text-sm text-gray-600">Food Runner | Mar 2023 – Aug 2025</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">Mathnasium</p>
-                    <p className="text-sm text-gray-600">Math Tutor | Aug 2024 – Jan 2025</p>
-                  </div>
+            <div className="card-interactive animate-fade-in-up">
+              <div className="space-y-4">
+                <div>
+                  <p className="font-semibold text-gray-900">Courtyard Marriott</p>
+                  <p className="text-sm text-gray-600">Bistro Attendant | Sep 2025 – Present</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Lafayette Park Hotel</p>
+                  <p className="text-sm text-gray-600">Food Runner | Mar 2023 – Aug 2025</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Mathnasium</p>
+                  <p className="text-sm text-gray-600">Math Tutor | Aug 2024 – Jan 2025</p>
                 </div>
               </div>
             </div>

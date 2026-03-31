@@ -2,6 +2,7 @@
 
 import { Github, ExternalLink, Zap, Database, Brain, Clock } from 'lucide-react';
 import ImagePlaceholder from '@/components/ImagePlaceholder';
+import Image from 'next/image';
 
 const projects = [
   {
@@ -30,6 +31,11 @@ const projects = [
       github: 'https://github.com/JakeBowen2005/ClearBid',
     },
     screenshotPlaceholder: 'ClearBid product dashboard and workflow screenshots',
+    screenshots: [
+      '/images/clearbid-dashboard.png',
+      '/images/clearbid-workflow-1.png',
+      '/images/clearbid-workflow-2.png',
+    ],
     featured: true,
   },
   {
@@ -160,11 +166,41 @@ export default function ProjectsPage() {
                       </div>
                     </div>
 
-                    <ImagePlaceholder
-                      title={`${project.title} Screenshot Slot`}
-                      note={`Drop in images for: ${project.screenshotPlaceholder}.`}
-                      ratio="wide"
-                    />
+                    {project.screenshots ? (
+                      <div className="grid gap-4">
+                        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white">
+                          <Image
+                            src={project.screenshots[0]}
+                            alt={`${project.title} dashboard screenshot`}
+                            fill
+                            className="object-contain"
+                            sizes="(max-width: 768px) 100vw, 45vw"
+                          />
+                        </div>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                          {project.screenshots.slice(1).map((src, imageIndex) => (
+                            <div
+                              key={src}
+                              className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white"
+                            >
+                              <Image
+                                src={src}
+                                alt={`${project.title} workflow screenshot ${imageIndex + 1}`}
+                                fill
+                                className="object-contain"
+                                sizes="(max-width: 768px) 100vw, 22vw"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <ImagePlaceholder
+                        title={`${project.title} Screenshot Slot`}
+                        note={`Drop in images for: ${project.screenshotPlaceholder}.`}
+                        ratio="wide"
+                      />
+                    )}
                   </div>
                 </div>
 
