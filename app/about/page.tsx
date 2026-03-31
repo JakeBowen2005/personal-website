@@ -42,16 +42,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-5 order-2 md:order-1">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white">
-                <Image
-                  src="/images/about-athletics.jpg"
-                  alt="Jake Bowen athletics photo"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
+            <div className="order-2 md:order-1">
               <div className="card-interactive animate-fade-in-up">
                 <div className="space-y-4 text-gray-700">
                   <p className="font-semibold">Basketball: years of team discipline and communication</p>
