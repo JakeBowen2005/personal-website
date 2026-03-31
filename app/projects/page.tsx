@@ -1,7 +1,6 @@
 'use client';
 
 import { Github, ExternalLink, Zap, Database, Brain, Clock } from 'lucide-react';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 import Image from 'next/image';
 
 const projects = [
@@ -62,7 +61,7 @@ const projects = [
       live: 'https://stock-dashboard-uef7.onrender.com',
       github: 'https://github.com/JakeBowen2005/Stock_Dashboard',
     },
-    screenshotPlaceholder: 'Stock dashboard watchlist and analytics views',
+    screenshots: ['/images/stock-dashboard-login.png'],
   },
   {
     title: 'Garmin Running Analysis',
@@ -87,7 +86,6 @@ const projects = [
     links: {
       github: 'https://github.com/JakeBowen2005/Garmin-running-summary',
     },
-    screenshotPlaceholder: 'Charts showing pace trends, volume, and performance improvements',
   },
 ];
 
@@ -177,30 +175,26 @@ export default function ProjectsPage() {
                             sizes="(max-width: 768px) 100vw, 45vw"
                           />
                         </div>
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          {project.screenshots.slice(1).map((src, imageIndex) => (
-                            <div
-                              key={src}
-                              className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white"
-                            >
-                              <Image
-                                src={src}
-                                alt={`${project.title} workflow screenshot ${imageIndex + 1}`}
-                                fill
-                                className="object-contain"
-                                sizes="(max-width: 768px) 100vw, 22vw"
-                              />
-                            </div>
-                          ))}
-                        </div>
+                        {project.screenshots.length > 1 && (
+                          <div className="grid sm:grid-cols-2 gap-4">
+                            {project.screenshots.slice(1).map((src, imageIndex) => (
+                              <div
+                                key={src}
+                                className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white"
+                              >
+                                <Image
+                                  src={src}
+                                  alt={`${project.title} workflow screenshot ${imageIndex + 1}`}
+                                  fill
+                                  className="object-contain"
+                                  sizes="(max-width: 768px) 100vw, 22vw"
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
-                    ) : (
-                      <ImagePlaceholder
-                        title={`${project.title} Screenshot Slot`}
-                        note={`Drop in images for: ${project.screenshotPlaceholder}.`}
-                        ratio="wide"
-                      />
-                    )}
+                    ) : null}
                   </div>
                 </div>
 

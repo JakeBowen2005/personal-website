@@ -1,7 +1,6 @@
 'use client';
 
 import { Heart, Zap, Target, Users, Github, Linkedin, Mail } from 'lucide-react';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 import Image from 'next/image';
 
 export default function AboutPage() {
@@ -28,14 +27,18 @@ export default function AboutPage() {
                 I grew up in a family culture centered on discipline and accountability. That mindset became foundational to how I approach engineering work: show up, execute, and improve continuously.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                My goal is simple: contribute to meaningful products, learn from strong teammates, and become the kind of engineer people trust on difficult problems.
+                Running reinforced that foundation for me. Long training blocks taught me patience, pacing, and resilience, and I bring that same energy into engineering work and long-term product building.
               </p>
             </div>
-            <ImagePlaceholder
-              title="Personal Story Photo"
-              note="Add a personal photo that represents your roots or day-to-day life in Fullerton/Bay Area."
-              ratio="landscape"
-            />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white">
+              <Image
+                src="/images/personal-running.jpg"
+                alt="Jake Bowen running during training"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
