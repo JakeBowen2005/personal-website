@@ -1,7 +1,6 @@
 'use client';
 
 import { Heart, Zap, Target, Users, Github, Linkedin, Mail } from 'lucide-react';
-import Image from 'next/image';
 
 export default function AboutPage() {
   return (
@@ -30,15 +29,16 @@ export default function AboutPage() {
                 Running reinforced that foundation for me. Long training blocks taught me patience, pacing, and resilience, and I bring that same energy into engineering work and long-term product building.
               </p>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white">
-              <Image
-                src="/images/personal-running.jpg"
-                alt="Jake Bowen running during training"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                unoptimized
-              />
+            <div className="card-interactive animate-fade-in-up">
+              <div className="space-y-3">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">Personal Philosophy</p>
+                <p className="text-gray-700 leading-relaxed">
+                  I treat engineering progress like athletic training: consistent reps, honest feedback, and measurable improvement over time.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  That mindset helps me stay steady through ambiguity and keep shipping with a long-term view.
+                </p>
+              </div>
             </div>
           </div>
 
